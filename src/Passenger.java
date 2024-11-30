@@ -69,4 +69,18 @@ public class Passenger {
         return false;
     }
 
+    public void printActivities(){
+        for(Activity activity:activityList){
+            System.out.println("\t" + activity.getName());
+            System.out.println("\t\t"  + activity.getDescription());
+            System.out.println("\t\t"  + activity.getDestination());
+            int cost = activity.getCost();
+            if(discount == 0){
+                System.out.println("\t\tCost: Free");
+            }else{
+                System.out.println("\t\tCost: $" + cost*discount);
+            }
+        }
+    }
+
 }

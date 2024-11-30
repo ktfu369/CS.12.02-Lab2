@@ -83,24 +83,9 @@ public class CruiseShip {
         }
         System.out.println();
 
-        // print activity list of each passenger
+        // print activity list of the passenger
         System.out.println("Activities: ");
-        ArrayList<Activity> passengerActivity = passenger.getActivityList();
-        for(Activity activity:passengerActivity){
-            System.out.println("\t" + activity.getName());
-            System.out.println("\t\t"  + activity.getDescription());
-            System.out.println("\t\t"  + activity.getDestination());
-            int cost = activity.getCost();
-            if(passenger instanceof SeniorPassenger){
-                System.out.println("\t\tCost: $" + cost*0.9);
-            }
-            if(passenger instanceof StandardPassenger){
-                System.out.println("\t\tCost: $" + cost);
-            }
-            if(passenger instanceof PremiumPassenger){
-                System.out.println("\t\tCost: Free");
-            }
-        }
+        passenger.printActivities();
     }
 
     // print available activities on the ruise ship
